@@ -3,6 +3,7 @@ import { WidgetBinding } from "@paperbits/common/editing";
 import { EventManager } from "@paperbits/common/events";
 import { StyleCompiler } from "@paperbits/common/styles";
 import { ViewModelBinder } from "@paperbits/common/widgets";
+import { ApiService } from "../../../services/apiService";
 import { ClickCounterModel } from "../clickCounterModel";
 import { ClickCounter } from "./clickCounter";
 
@@ -11,7 +12,8 @@ export class ClickCounterViewModelBinder
 {
   constructor(
     private readonly eventManager: EventManager,
-    private readonly styleCompiler: StyleCompiler
+    private readonly styleCompiler: StyleCompiler,
+    private readonly apiService: ApiService
   ) {}
 
   public async createWidgetBinding(
@@ -67,6 +69,7 @@ export class ClickCounterViewModelBinder
     viewModel.setState((state) => ({
       initialCount: model.initialCount,
       classNames: classNames,
+      apiService: this.apiService,
     }));
 
     return viewModel;

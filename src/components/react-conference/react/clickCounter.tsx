@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect } from "react";
 
 export class ClickCounter extends React.Component {
   public state: any;
@@ -24,14 +25,25 @@ export class ClickCounter extends React.Component {
           <a href="https://paperbits.io/wiki/widget-anatomy">widget anatomy</a>.
         </p>
         <p>BIG TEST</p>
-
-        <div
-          style={{ height: 100 }}
-          dangerouslySetInnerHTML={{
-            __html: `<click-counter-runtime props='{ "initialCount": ${this.state.initialCount} }'></click-counter-runtime>`,
-          }}
-        />
+        {this.state.initialCount}
+        {this.state.apiService && (
+          <ApiCaller apiService={this.state.apiService} />
+        )}
       </div>
     );
   }
 }
+
+const ApiCaller = ({ apiService }) => {
+  const getAllApis = async () => {
+    const res = await apiService.getApis("");
+    console.log({ res });
+  };
+  useEffect(() => {
+    if (apiService) {
+      getAllApis();
+    }
+  }, [apiService]);
+
+  return <div>API calls</div>;
+};

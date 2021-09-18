@@ -66,11 +66,13 @@ import { RuntimeConfigurator } from "./services/runtimeConfigurator";
 import { ReactModule } from "@paperbits/react/react.module";
 
 import { ClickCounterEditorModule } from "./components/react-conference/clickCounter.design.module";
+import { ApiService } from "./services/apiService";
 
 export class ApimDesignModule implements IInjectorModule {
   public register(injector: IInjector): void {
     injector.bindModule(new ReactModule());
     injector.bindModule(new ClickCounterEditorModule());
+    injector.bind("apiService", ApiService);
 
     injector.bindModule(new SetupModule());
     injector.bindModule(new ListOfApisModule());
