@@ -18,14 +18,23 @@ if (fs.existsSync(componentDirectory)) {
 }
 
 fs.mkdirSync(componentDirectory);
+fs.mkdirSync(componentDirectory+"/react");
 
 const generatedTemplates = templates.map((template) => template(componentName));
 
 generatedTemplates.forEach((template) => {
-  fs.writeFileSync(
-    `${componentDirectory}/${componentName}${template.extension}`,
-    template.content
-  );
+    if (template.folder) {
+
+          fs.writeFileSync(
+            `${componentDirectory}/${template.folder}/${template.filename}`,
+            template.content
+          );
+    } else {
+        fs.writeFileSync(
+            `${componentDirectory}/${template.filename}`,
+            template.content
+          );
+    }
 });
 
 console.log(

@@ -66,12 +66,14 @@ import { RuntimeConfigurator } from "./services/runtimeConfigurator";
 import { ReactModule } from "@paperbits/react/react.module";
 
 import { ReactConferenceEditorModule } from "./components/react-conference/reactConference.design.module";
+import { TestEditorModule } from "./components/Test/Test.design.module";
 import { ApiService } from "./services/apiService";
 
 export class ApimDesignModule implements IInjectorModule {
   public register(injector: IInjector): void {
     injector.bindModule(new ReactModule());
     injector.bindModule(new ReactConferenceEditorModule());
+    injector.bindModule(new TestEditorModule());
     injector.bind("apiService", ApiService);
 
     injector.bindModule(new SetupModule());
