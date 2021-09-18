@@ -4,11 +4,11 @@ import { EventManager } from "@paperbits/common/events";
 import { StyleCompiler } from "@paperbits/common/styles";
 import { ViewModelBinder } from "@paperbits/common/widgets";
 import { ApiService } from "../../../services/apiService";
-import { ClickCounterModel } from "../clickCounterModel";
-import { ClickCounter } from "./clickCounter";
+import { ReactConferenceModel } from "../reactConferenceModel";
+import { ReactConference } from "./reactConference";
 
-export class ClickCounterViewModelBinder
-  implements ViewModelBinder<ClickCounterModel, ClickCounter>
+export class ReactConferenceViewModelBinder
+  implements ViewModelBinder<ReactConferenceModel, ReactConference>
 {
   constructor(
     private readonly eventManager: EventManager,
@@ -17,19 +17,19 @@ export class ClickCounterViewModelBinder
   ) {}
 
   public async createWidgetBinding(
-    model: ClickCounterModel,
+    model: ReactConferenceModel,
     bindingContext: Bag<any>
-  ): Promise<WidgetBinding<ClickCounterModel, ClickCounter>> {
-    const binding = new WidgetBinding<ClickCounterModel, ClickCounter>();
+  ): Promise<WidgetBinding<ReactConferenceModel, ReactConference>> {
+    const binding = new WidgetBinding<ReactConferenceModel, ReactConference>();
     binding.framework = "react";
     binding.model = model;
-    binding.name = "click-counter";
+    binding.name = "react-conference";
     // binding.editor = "click-counter-editor";
     binding.readonly = false;
     binding.flow = "block";
     binding.draggable = true;
-    binding.displayName = "Click counter";
-    binding.viewModelClass = ClickCounter;
+    binding.displayName = "React Conference";
+    binding.viewModelClass = ReactConference;
     binding.applyChanges = async () => {
       await this.modelToViewModel(model, binding.viewModel, bindingContext);
       this.eventManager.dispatchEvent("onContentUpdate");
@@ -47,10 +47,10 @@ export class ClickCounterViewModelBinder
   }
 
   public async modelToViewModel(
-    model: ClickCounterModel,
-    viewModel: ClickCounter,
+    model: ReactConferenceModel,
+    viewModel: ReactConference,
     bindingContext?: Bag<any>
-  ): Promise<ClickCounter> {
+  ): Promise<ReactConference> {
     let classNames = null;
 
     if (model.styles) {
@@ -75,7 +75,7 @@ export class ClickCounterViewModelBinder
     return viewModel;
   }
 
-  public canHandleModel(model: ClickCounterModel): boolean {
-    return model instanceof ClickCounterModel;
+  public canHandleModel(model: ReactConferenceModel): boolean {
+    return model instanceof ReactConferenceModel;
   }
 }

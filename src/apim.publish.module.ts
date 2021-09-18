@@ -37,13 +37,13 @@ import { ApiProductsModule } from "./components/apis/api-products/ko/apiProducts
 import { RuntimeConfigPublisher } from "./publishing/runtimeConfigPublisher";
 import { RuntimeConfigBuilder } from "./publishing/runtimeConfigBuilder";
 import { ReactModule } from "@paperbits/react/react.module";
-import { ClickCounterModule } from "./components/react-conference/clickCounter.publish.module";
+import { ReactConferenceModule } from "./components/react-conference/reactConference.publish.module";
 import { ApiService } from "./services/apiService";
 
 export class ApimPublishModule implements IInjectorModule {
   public register(injector: IInjector): void {
     injector.bindModule(new ReactModule());
-    injector.bindModule(new ClickCounterModule());
+    injector.bindModule(new ReactConferenceModule());
     injector.bind("apiService", ApiService);
 
     injector.bindModule(new ListOfApisModule());

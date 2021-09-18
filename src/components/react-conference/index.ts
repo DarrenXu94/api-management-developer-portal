@@ -1,3 +1,3 @@
-export * from "./clickCounterHandlers";
-export * from "./clickCounterModel";
-export * from "./clickCounterModelBinder";
+export * from "./reactConferenceHandlers";
+export * from "./reactConferenceModel";
+export * from "./reactConferenceModelBinder";

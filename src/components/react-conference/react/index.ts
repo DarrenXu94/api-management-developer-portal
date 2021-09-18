@@ -1,3 +1,3 @@
-export * from "./clickCounter.module";
-export * from "./clickCounter";
-export * from "./clickCounterViewModelBinder";
+export * from "./reactConference.module";
+export * from "./reactConference";
+export * from "./reactConferenceViewModelBinder";

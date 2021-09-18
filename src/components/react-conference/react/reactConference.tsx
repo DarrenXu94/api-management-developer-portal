@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useEffect } from "react";
 
-export class ClickCounter extends React.Component {
+export class ReactConference extends React.Component {
   public state: any;
 
   constructor(props) {
