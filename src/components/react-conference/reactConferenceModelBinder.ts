@@ -27,7 +27,6 @@ export class ReactConferenceModelBinder
   ): Promise<ReactConferenceModel> {
     const model = new ReactConferenceModel();
     model.initialCount = contract.initialCount;
-    model.styles = contract.styles;
     return model;
   }
 
@@ -35,7 +34,6 @@ export class ReactConferenceModelBinder
     const contract: ReactConferenceContract = {
       type: "react-conference",
       initialCount: model.initialCount,
-      styles: model.styles,
     };
 
     return contract;

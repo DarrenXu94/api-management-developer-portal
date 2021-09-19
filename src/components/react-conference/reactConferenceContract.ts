@@ -6,9 +6,4 @@ export interface ReactConferenceContract extends Contract {
    * Initial count.
    */
   initialCount: number;
-
-  /**
-   * Widget local styles.
-   */
-  styles?: LocalStyles;
 }
