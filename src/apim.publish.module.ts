@@ -39,11 +39,13 @@ import { RuntimeConfigBuilder } from "./publishing/runtimeConfigBuilder";
 import { ReactModule } from "@paperbits/react/react.module";
 import { ReactConferenceModule } from "./components/react-conference/reactConference.publish.module";
 import { ApiService } from "./services/apiService";
+import { ClickCounterModule } from "./components/click-counter/clickCounter.publish.module";
 
 export class ApimPublishModule implements IInjectorModule {
   public register(injector: IInjector): void {
     injector.bindModule(new ReactModule());
     injector.bindModule(new ReactConferenceModule());
+    injector.bindModule(new ClickCounterModule());
     injector.bind("apiService", ApiService);
 
     injector.bindModule(new ListOfApisModule());

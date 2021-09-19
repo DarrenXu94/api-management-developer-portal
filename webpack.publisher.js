@@ -27,6 +27,10 @@ const publisherConfig = {
     module: {
         rules: [
             {
+                test: /\.css$/i,
+                use: ["css-loader"],
+              },
+            {
                 test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,

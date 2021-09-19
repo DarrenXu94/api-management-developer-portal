@@ -19,6 +19,10 @@ const designerConfig = {
     module: {
         rules: [
             {
+                test: /\.css$/i,
+                use: ["css-loader"],
+              },
+            {
                 test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useEffect } from "react";
+import AUheader, { AUheaderBrand } from "@gov.au/header";
 
 export class ReactConference extends React.Component {
   public state: any;
@@ -24,7 +25,21 @@ export class ReactConference extends React.Component {
           Please refer to documentation to learn about{" "}
           <a href="https://paperbits.io/wiki/widget-anatomy">widget anatomy</a>.
         </p>
-        <p>BIG TEST</p>
+        <AUheader>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-9">
+                <AUheaderBrand
+                  title="Page title"
+                  subline="Service sub-title that could be a little longer"
+                  link="#"
+                  brandImage="https://designsystem.gov.au/assets/img/placeholder/256x80.png"
+                  brandImageAlt="Insert alternate text here"
+                />
+              </div>
+            </div>
+          </div>
+        </AUheader>
         {this.state.initialCount}
         {this.state.apiService && (
           <ApiCaller apiService={this.state.apiService} />

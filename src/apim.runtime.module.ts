@@ -77,8 +77,14 @@ import { TenantService } from "./services/tenantService";
 import { UsersService } from "./services/usersService";
 import { ApimSettingsProvider } from "./configuration/apimSettingsProvider";
 
+import { ClickCounterRuntimeModule } from "./components/click-counter/clickCounter.runtime.module";
+import { ReactConferenceRuntimeModule } from "./components/react-conference/reactConference.runtime.module";
+
 export class ApimRuntimeModule implements IInjectorModule {
   public register(injector: IInjector): void {
+    injector.bind("clickCounter", ClickCounterRuntimeModule);
+    injector.bind("reactConference", ReactConferenceRuntimeModule);
+
     injector.bindSingleton("logger", ConsoleLogger);
     injector.bindToCollection("autostart", UnhandledErrorHandler);
     injector.bindToCollection("autostart", BalloonBindingHandler);
