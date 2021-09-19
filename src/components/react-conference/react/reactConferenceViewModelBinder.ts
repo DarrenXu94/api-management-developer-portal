@@ -24,7 +24,7 @@ export class ReactConferenceViewModelBinder
     binding.framework = "react";
     binding.model = model;
     binding.name = "react-conference";
-    // binding.editor = "click-counter-editor";
+    binding.editor = "react-conference-editor";
     binding.readonly = false;
     binding.flow = "block";
     binding.draggable = true;
