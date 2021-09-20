@@ -37,11 +37,6 @@ export class ${componentName}ViewModelBinder
     binding.onCreate = async () => {
         await this.modelToViewModel(model, binding.viewModel, bindingContext);
     };
-    binding.onDispose = async () => {
-        if (model.styles?.instance) {
-        bindingContext.styleManager.removeStyleSheet(model.styles.instance.key);
-        }
-    };
 
     return binding;
     }
@@ -52,19 +47,6 @@ export class ${componentName}ViewModelBinder
     bindingContext?: Bag<any>
     ): Promise<${componentName}> {
     let classNames = null;
-
-    if (model.styles) {
-        const styleModel = await this.styleCompiler.getStyleModelAsync(
-        model.styles,
-        bindingContext?.styleManager
-        );
-
-        if (styleModel.styleManager) {
-        styleModel.styleManager.setStyleSheet(styleModel.styleSheet);
-        }
-
-        classNames = styleModel.classNames;
-    }
 
     viewModel.setState((state) => ({
         initialCount: model.initialCount,

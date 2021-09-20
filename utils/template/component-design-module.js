@@ -1,6 +1,7 @@
 module.exports = (componentName) => ({
     content: `import { IInjectorModule, IInjector } from "@paperbits/common/injection";
 import { ${componentName}Handlers } from "./${componentName}Handler";
+import { ${componentName}ModelBinder } from "./${componentName}ModelBinder";
 
 import { ${componentName}, ${componentName}ViewModelBinder } from "./react";
 
