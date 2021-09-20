@@ -19,6 +19,7 @@ if (fs.existsSync(componentDirectory)) {
 
 fs.mkdirSync(componentDirectory);
 fs.mkdirSync(componentDirectory+"/react");
+fs.mkdirSync(componentDirectory+"/react/runtime");
 
 const generatedTemplates = templates.map((template) => template(componentName));
 

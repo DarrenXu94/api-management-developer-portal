@@ -2,6 +2,11 @@ import * as React from "react";
 import { useEffect } from "react";
 import AUheader, { AUheaderBrand } from "@gov.au/header";
 
+// const headerImg =
+//   require("../../../../pancake/assets/header-logo-agov--dark.png").default;
+
+const headerImg = require("@pancake/assets/header-logo-agov--dark.png").default;
+
 export class ReactConference extends React.Component {
   public state: any;
 
@@ -33,7 +38,7 @@ export class ReactConference extends React.Component {
                   title="Page title"
                   subline="Service sub-title that could be a little longer"
                   link="#"
-                  brandImage="https://designsystem.gov.au/assets/img/placeholder/256x80.png"
+                  brandImage={headerImg}
                   brandImageAlt="Insert alternate text here"
                 />
               </div>

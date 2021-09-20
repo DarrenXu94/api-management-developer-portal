@@ -81,6 +81,9 @@ const publisherConfig = {
         })
     ],
     resolve: {
+        alias: {
+            "@pancake": path.resolve(__dirname, 'pancake/'),
+          },
         extensions: [".ts", ".tsx", ".js", ".jsx", ".html", ".scss"]
     }
 };

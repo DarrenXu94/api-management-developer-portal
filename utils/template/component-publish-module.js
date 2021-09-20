@@ -6,6 +6,8 @@ import { ${componentName}, ${componentName}ViewModelBinder } from "./react";
 export class ${componentName}Module implements IInjectorModule {
     public register(injector: IInjector): void {
     injector.bind("${componentName}", ${componentName});
+    injector.bindToCollection("modelBinders", ${componentName}ModelBinder);
+
     injector.bindToCollection(
         "viewModelBinders",
         ${componentName}ViewModelBinder

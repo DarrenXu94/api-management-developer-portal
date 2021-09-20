@@ -13,7 +13,11 @@
     "allowUnreachableCode": true,
     "sourceMap": true,
     "incremental": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@pancake/*": ["pancake/*"]
+    }
   },
   "include": ["./src/**/*", "./node_modules/@paperbits/**/*"],
   "exclude": ["./node_modules"]

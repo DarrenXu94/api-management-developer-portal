@@ -8,6 +8,8 @@ export class ${componentName}EditorModule implements IInjectorModule {
     public register(injector: IInjector): void {
     injector.bindToCollection("widgetHandlers", ${componentName}Handlers);
     injector.bind("${componentName}", ${componentName});
+    injector.bindToCollection("modelBinders", ${componentName}ModelBinder);
+
     injector.bindToCollection(
         "viewModelBinders",
         ${componentName}ViewModelBinder
